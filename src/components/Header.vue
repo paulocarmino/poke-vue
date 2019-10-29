@@ -7,6 +7,7 @@
         dense
         filled
         hide-bottom-space
+        debounce="500"
         v-model="text"
         placeholder="Search for pokemons..."
         class="q-ml-md full-width"
@@ -26,11 +27,21 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
       text: ""
     };
+  },
+  methods: {
+    ...mapActions(["setSearchInputText"])
+  },
+  watch: {
+    text: function() {
+      this.setSearchInputText(this.text);
+    }
   }
 };
 </script>
@@ -39,5 +50,6 @@ export default {
 .q-field--dense .q-field__control,
 .q-field--dense .q-field__marginal {
   height: 34px;
+  border-radius: 4px;
 }
 </style>

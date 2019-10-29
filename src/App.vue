@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <Header />
-    <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
+    <!-- <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
@@ -50,27 +50,29 @@
           </q-item-section>
         </q-item>
       </q-list>
-    </q-drawer>
+    </q-drawer>-->
 
     <q-page-container>
-      <!-- <HelloWorld /> -->
+      <Home />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Home from "./pages/Home.vue";
 
 export default {
   name: "LayoutDefault",
 
   components: {
-    Header
+    Header,
+    Home
   },
 
   data() {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: false
     };
   }
 };
