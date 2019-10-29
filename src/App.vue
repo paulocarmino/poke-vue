@@ -1,22 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-          icon="mdi-menu"
-        />
-
-        <q-toolbar-title>Quasar App</q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
+    <Header />
     <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
@@ -69,19 +53,19 @@
     </q-drawer>
 
     <q-page-container>
-      <HelloWorld />
+      <!-- <HelloWorld /> -->
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header.vue";
 
 export default {
   name: "LayoutDefault",
 
   components: {
-    HelloWorld
+    Header
   },
 
   data() {

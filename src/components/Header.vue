@@ -1,0 +1,43 @@
+<template>
+  <q-header>
+    <q-toolbar class="bg-white text-black vertical-middle">
+      <img src="../assets/logo.svg" class="q-mr-md" height="40px" />
+
+      <q-input
+        dense
+        filled
+        hide-bottom-space
+        v-model="text"
+        placeholder="Search for pokemons..."
+        class="q-ml-md full-width"
+        color="grey-4"
+      >
+        <template v-slot:prepend>
+          <q-icon name="mdi-magnify" />
+        </template>
+        <template v-slot:append>
+          <q-icon v-if="text" name="mdi-close" class="cursor-pointer" @click="text = ''" />
+        </template>
+      </q-input>
+
+      <!-- <q-toolbar-title>Quasar App</q-toolbar-title> -->
+    </q-toolbar>
+  </q-header>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      text: ""
+    };
+  }
+};
+</script>
+
+<style>
+.q-field--dense .q-field__control,
+.q-field--dense .q-field__marginal {
+  height: 34px;
+}
+</style>

@@ -1,11 +1,11 @@
-import Vue from 'vue'
+import Vue from "vue";
 
-import './styles/quasar.styl'
-import iconSet from 'quasar/icon-set/mdi-v3.js'
-import lang from 'quasar/lang/pt-br.js'
-import '@quasar/extras/mdi-v3/mdi-v3.css'
+import "./styles/quasar.styl";
+import iconSet from "quasar/icon-set/mdi-v3.js";
+import lang from "quasar/lang/pt-br.js";
+import "@quasar/extras/mdi-v3/mdi-v3.css";
 import {
-  Quasar, 
+  Quasar,
   QLayout,
   QHeader,
   QDrawer,
@@ -19,7 +19,9 @@ import {
   QItem,
   QItemSection,
   QItemLabel,
-} from 'quasar'
+  QImg,
+  QInput
+} from "quasar";
 
 Vue.use(Quasar, {
   config: {},
@@ -37,11 +39,11 @@ Vue.use(Quasar, {
     QItem,
     QItemSection,
     QItemLabel,
+    QImg,
+    QInput
   },
-  directives: {
-  },
-  plugins: {
-  },
+  directives: {},
+  plugins: {},
   lang: lang,
   iconSet: iconSet
- })
+});
