@@ -20,7 +20,8 @@ import {
   QItemSection,
   QItemLabel,
   QImg,
-  QInput
+  QInput,
+  QInfiniteScroll
 } from "quasar";
 
 Vue.use(Quasar, {
@@ -40,7 +41,8 @@ Vue.use(Quasar, {
     QItemSection,
     QItemLabel,
     QImg,
-    QInput
+    QInput,
+    QInfiniteScroll
   },
   directives: {},
   plugins: {},
