@@ -3,8 +3,11 @@
     <q-card-section class="pokeCard">
       <div class="layer" />
       <div class="pokeCard--infoContainer">
-        <span>{{ pokemon.number }}</span>
-        <p>{{ pokemon.name }}</p>
+        <div>
+          <span>{{ pokemon.number }}</span>
+          <p>{{ pokemon.name }}</p>
+        </div>
+        <Types :types="pokemon.types" />
       </div>
       <div class="pokeCard--thumbContainer">
         <img :src="pokemon.img" height="88px" width="88px" />
@@ -14,10 +17,16 @@
 </template>
 
 <script>
+import Types from "./Types";
+
 export default {
   name: "Card",
 
-  props: ["pokemon"]
+  props: ["pokemon"],
+
+  components: {
+    Types
+  }
 };
 </script>
 
@@ -30,22 +39,18 @@ export default {
 .pokeCard {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* position: relative; */
-  /* justify-content: space-between; */
-  /* width: 100%; */
   height: 115px;
   max-height: 115px;
-  /* z-index: 1; */
+  z-index: 1;
 
   &.q-card__section {
     padding: 8px;
   }
 
   &--infoContainer {
-    /* flex: 1; */
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
+    justify-content: space-between;
 
     span {
       font-size: 0.6rem;

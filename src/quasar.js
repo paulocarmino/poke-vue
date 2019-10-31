@@ -23,7 +23,8 @@ import {
   QInput,
   QInfiniteScroll,
   QCard,
-  QCardSection
+  QCardSection,
+  QBadge
 } from "quasar";
 
 Vue.use(Quasar, {
@@ -46,7 +47,8 @@ Vue.use(Quasar, {
     QInput,
     QInfiniteScroll,
     QCard,
-    QCardSection
+    QCardSection,
+    QBadge
   },
   directives: {},
   plugins: {},
