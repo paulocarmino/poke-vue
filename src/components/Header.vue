@@ -1,7 +1,7 @@
 <template>
-  <q-header>
+  <q-header class="q-mt-sm">
     <q-toolbar class="bg-white text-black vertical-middle">
-      <img src="../assets/logo.svg" class="q-mr-md" height="40px" width="45px" />
+      <img src="../assets/logo.svg" class="q-mr-md" height="40px" width="40px" />
 
       <q-input
         dense

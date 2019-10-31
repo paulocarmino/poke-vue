@@ -24,7 +24,7 @@ export default {
         case "Water":
           return "blue-8";
         case "Bug":
-          return "grey-9";
+          return "grey-6";
         case "Ground":
           return "brown-6";
         case "Fighting":
@@ -36,7 +36,7 @@ export default {
         case "Fairy":
           return "pink-6";
         case "Normal":
-          return "grey-7";
+          return "grey-9";
         case "Rock":
           return "blue-grey-9";
         case "Steel":

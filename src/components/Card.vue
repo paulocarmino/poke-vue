@@ -55,13 +55,13 @@ export default {
     span {
       font-size: 0.6rem;
       color: #fff;
-      margin-bottom: -2px;
     }
 
     p {
       font-size: 0.9rem;
       color: #fff;
       font-weight: 600;
+      margin-top: -5px;
     }
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex">
+  <q-page class="flex q-mt-sm">
     <div v-if="$apollo.loading">Loading...</div>
     <PokemonsList />
   </q-page>
