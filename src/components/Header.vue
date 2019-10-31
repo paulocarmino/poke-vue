@@ -10,7 +10,7 @@
         debounce="500"
         v-model="text"
         placeholder="Search for pokemons..."
-        class="q-ml-md full-width searchInput"
+        class="searchInput"
         color="grey-4"
       >
         <template v-slot:prepend>
@@ -20,8 +20,6 @@
           <q-icon v-if="text" name="mdi-close" class="cursor-pointer" @click="text = ''" />
         </template>
       </q-input>
-
-      <!-- <q-toolbar-title>Quasar App</q-toolbar-title> -->
     </q-toolbar>
   </q-header>
 </template>
@@ -48,6 +46,7 @@ export default {
 
 <style lang="scss">
 .searchInput {
+  flex: 1;
   .q-field__inner {
     .q-field__control,
     .q-field__marginal {
@@ -57,4 +56,3 @@ export default {
   }
 }
 </style>
-.q-field__control

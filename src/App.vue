@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hhh lpr lff">
     <Header />
     <!-- <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
       <q-list>
