@@ -10,7 +10,7 @@
         debounce="500"
         v-model="text"
         placeholder="Search for pokemons..."
-        class="q-ml-md full-width"
+        class="q-ml-md full-width searchInput"
         color="grey-4"
       >
         <template v-slot:prepend>
@@ -46,10 +46,15 @@ export default {
 };
 </script>
 
-<style>
-.q-field--dense .q-field__control,
-.q-field--dense .q-field__marginal {
-  height: 34px;
-  border-radius: 4px;
+<style lang="scss">
+.searchInput {
+  .q-field__inner {
+    .q-field__control,
+    .q-field__marginal {
+      height: 34px;
+      border-radius: 4px;
+    }
+  }
 }
 </style>
+.q-field__control
