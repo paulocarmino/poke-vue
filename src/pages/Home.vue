@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex">
     <div v-if="$apollo.loading">Loading...</div>
-    {{ pokemons }}
+    <PokemonsList />
   </q-page>
 </template>
 
@@ -9,66 +9,11 @@
 </style>
 
 <script>
-import { mapState } from "vuex";
-import gql from "graphql-tag";
+import PokemonsList from "../components/PokemonsList";
 
 export default {
   name: "Home",
 
-  data() {
-    return {
-      skip: null
-    };
-  },
-
-  computed: {
-    ...mapState(["searchText"])
-  },
-
-  methods: {},
-
-  apollo: {
-    pokemons: {
-      query: gql`
-        query Pokemons($name: String, $skip: Int) {
-          pokemons(
-            where: { name_contains: $name }
-            skip: $skip
-            orderBy: number_ASC
-          ) {
-            _id
-            number
-            name
-            specie
-            weight
-            height
-            description
-            color
-            img
-            types
-            strengths
-            weaknesses
-            stats {
-              hp
-              attack
-              defense
-              specialAttack
-              specialDefense
-              speed
-              total
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          name: this.searchText
-        };
-      },
-      result({ data }) {
-        this.skip = data.pokemons.length;
-      }
-    }
-  }
+  components: { PokemonsList }
 };
 </script>
