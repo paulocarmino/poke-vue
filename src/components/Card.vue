@@ -1,5 +1,9 @@
 <template>
-  <q-card class="pokeCardContainer" :style="{backgroundColor: pokemon.color}">
+  <q-card
+    class="pokeCardContainer"
+    :style="{backgroundColor: pokemon.color}"
+    @click="openDetails()"
+  >
     <q-card-section class="pokeCard">
       <div class="layer" />
       <div class="pokeCard--infoContainer">
@@ -17,6 +21,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 import Types from "./Types";
 
 export default {
@@ -26,6 +32,14 @@ export default {
 
   components: {
     Types
+  },
+
+  methods: {
+    ...mapActions(["openDetailsHandler", "setActivePokemon"]),
+    openDetails() {
+      this.setActivePokemon(this.pokemon);
+      this.openDetailsHandler();
+    }
   }
 };
 </script>
@@ -34,6 +48,7 @@ export default {
 .pokeCardContainer {
   margin-bottom: 10px;
   filter: saturate(1.4);
+  cursor: pointer;
 }
 
 .pokeCard {

@@ -1,9 +1,10 @@
 import Vue from "vue";
 
 import "./styles/quasar.styl";
-import iconSet from "quasar/icon-set/mdi-v3.js";
+import iconSet from "quasar/icon-set/mdi-v4";
 import lang from "quasar/lang/pt-br.js";
-import "@quasar/extras/mdi-v3/mdi-v3.css";
+import "@quasar/extras/mdi-v4/mdi-v4.css";
+
 import {
   Quasar,
   QLayout,
@@ -24,7 +25,14 @@ import {
   QInfiniteScroll,
   QCard,
   QCardSection,
-  QBadge
+  QBadge,
+  QScrollArea,
+  QTabPanels,
+  QTabPanel,
+  QTabs,
+  QTab,
+  QRouteTab,
+  QSeparator
 } from "quasar";
 
 Vue.use(Quasar, {
@@ -48,7 +56,14 @@ Vue.use(Quasar, {
     QInfiniteScroll,
     QCard,
     QCardSection,
-    QBadge
+    QBadge,
+    QScrollArea,
+    QTabPanels,
+    QTabPanel,
+    QTabs,
+    QTab,
+    QRouteTab,
+    QSeparator
   },
   directives: {},
   plugins: {},

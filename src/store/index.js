@@ -5,16 +5,31 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    searchText: ""
+    searchText: "",
+    openDetails: true,
+    activePokemon: {}
   },
   mutations: {
     setSearchInputText(state, text) {
       state.searchText = text;
+    },
+    openDetailsHandler(state) {
+      state.openDetails = !state.openDetails;
+    },
+    setActivePokemon(state, pokemon) {
+      state.activePokemon = pokemon;
     }
   },
   actions: {
-    setSearchInputText(context, text) {
-      context.commit("setSearchInputText", text);
+    setSearchInputText({ commit }, text) {
+      commit("setSearchInputText", text);
+    },
+    openDetailsHandler({ commit }) {
+      commit("openDetailsHandler");
+    },
+    setActivePokemon({ commit }, pokemon) {
+      console.log("passou");
+      commit("setActivePokemon", pokemon);
     }
   },
   modules: {}
