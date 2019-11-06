@@ -11,8 +11,46 @@
   >
     <div class="drawerContainer bg-primary">
       <div class="parte1">
-        <q-btn flat round color="text-white" icon="mdi-arrow-left" />
+        <div class="controls--container">
+          <q-btn flat round color="text-white" icon="mdi-arrow-left" @click="openDetailsHandler()" />
+          <div class="navigation--container">
+            <q-btn
+              flat
+              round
+              color="text-white"
+              icon="mdi-arrow-left"
+              @click="openDetailsHandler()"
+            />
+            <q-btn
+              flat
+              round
+              color="text-white"
+              icon="mdi-arrow-right"
+              @click="openDetailsHandler()"
+            />
+          </div>
+        </div>
+
+        <div class="headerInfo--container">
+          <div class="headerInfo--infoContainer">
+            <div class="headerInfo--texts">
+              <span class="text--number">{{ activePokemon.number }}</span>
+              <span class="text--name">{{ activePokemon.name }}</span>
+              <span class="text--specie">{{ activePokemon.specie }}</span>
+              <Types :types="activePokemon.types" class="big" />
+            </div>
+          </div>
+          <div class="headerInfo--image">
+            <q-img
+              :src="activePokemon.img"
+              class="pokemon--img"
+              style="height: 160px; width: 170px"
+              contain
+            />
+          </div>
+        </div>
       </div>
+
       <div class="parte2">
         <q-tabs v-model="tab" align="justify" no-caps active-color="primary" class="text-grey-9">
           <q-tab name="about" label="About" />
@@ -47,6 +85,8 @@
 import { mapState, mapActions } from "vuex";
 import { colors } from "quasar";
 
+import Types from "./Types";
+
 export default {
   name: "Drawer",
 
@@ -62,6 +102,10 @@ export default {
     };
   },
 
+  components: {
+    Types
+  },
+
   computed: {
     ...mapState(["openDetails", "activePokemon"])
   },
@@ -74,6 +118,10 @@ export default {
     activePokemon: function() {
       colors.setBrand("primary", this.activePokemon.color);
     }
+  },
+
+  beforeMount() {
+    colors.setBrand("primary", this.activePokemon.color);
   }
 };
 </script>
@@ -91,9 +139,10 @@ export default {
 }
 
 .parte1 {
-  height: 170px;
+  height: 175px;
   color: #fff;
   margin-top: 10px;
+  padding: 0px 25px;
 }
 
 .parte2 {
@@ -101,6 +150,75 @@ export default {
   background-color: #fff;
   border-top-left-radius: 45px;
   border-top-right-radius: 45px;
+}
+
+.controls {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px -12px;
+
+    .navigation {
+      &--container {
+        display: flex;
+        justify-content: space-between;
+        width: 80px;
+      }
+    }
+  }
+}
+
+.headerInfo {
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &--infoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    height: 100%;
+  }
+
+  &--texts {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    line-height: 1.2;
+    margin-top: 15px;
+  }
+
+  &--image {
+    height: 100%;
+    position: relative;
+  }
+}
+
+.text {
+  &--number {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &--name {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &--specie {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
+
+.pokemon {
+  &--img {
+    position: absolute;
+    right: -5px;
+    bottom: 10px;
+  }
 }
 </style>
 

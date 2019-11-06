@@ -57,8 +57,16 @@ export default {
 .typesContainer {
   display: flex;
   flex-direction: column;
-}
-.type-badge {
-  background-color: "#1b1b1b";
+
+  &.big {
+    flex-direction: row;
+
+    & .q-badge {
+      font-size: 14px;
+      padding: 5px 10px;
+      margin-right: 5px;
+    }
+  }
 }
 </style>
+
