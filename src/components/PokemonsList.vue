@@ -23,16 +23,17 @@ export default {
 
   data() {
     return {
-      skip: null
+      skip: null,
+      pokemonActiveNumber: ""
     };
   },
 
   apollo: {
     pokemons: {
       query: gql`
-        query Pokemons($name: String, $skip: Int) {
+        query Pokemons($name: String, $skip: Int, $number: String) {
           pokemons(
-            where: { name_contains: $name }
+            where: { name_contains: $name, number_contains: $number }
             skip: $skip
             orderBy: number_ASC
           ) {
@@ -62,7 +63,8 @@ export default {
       `,
       variables() {
         return {
-          name: this.searchText
+          name: this.searchText,
+          number: this.pokemonActiveNumber
         };
       },
       result({ data }) {
@@ -79,7 +81,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
   padding: 15px 15px;
-  /* width: 100%; */
+  width: 100%;
   cursor: pointer;
   filter: saturate(1.6);
 }

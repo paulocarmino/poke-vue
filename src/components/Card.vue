@@ -46,6 +46,7 @@ export default {
 
 <style lang="scss">
 .pokeCardContainer {
+  max-height: 115px;
   margin-bottom: 10px;
   filter: saturate(1.4);
   cursor: pointer;
